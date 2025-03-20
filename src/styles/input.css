@@ -1,0 +1,5 @@
+@import 'tailwindcss/preflight'; /* Replaces @tailwind base in v4 alpha */
+@tailwind utilities;             /* Replaces @tailwind components + utilities */
+@import "tailwindcss";
+
+@import './typography.css';
