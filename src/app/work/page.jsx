@@ -117,7 +117,7 @@ function InsuranceProviders() {
           {insuranceProviders.map(([client, logo]) => (
             <li key={client} className="group">
               <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
+                <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
                   <Image src={logo} alt={client} unoptimized />
                 </Border>
               </FadeIn>

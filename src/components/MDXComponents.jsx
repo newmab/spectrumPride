@@ -21,14 +21,14 @@ export const MDXComponents = {
         <GrayscaleTransitionImage
           {...props}
           sizes="(min-width: 768px) 42rem, 100vw"
-          className="aspect-[16/10] w-full object-cover"
+          className="aspect-16/10 w-full object-cover"
         />
       </div>
     )
   },
   StatList({ className, ...props }) {
     return (
-      <StatList className={clsx('my-32 !max-w-none', className)} {...props} />
+      <StatList className={clsx('my-32 max-w-none!', className)} {...props} />
     )
   },
   StatListItem,
@@ -67,7 +67,7 @@ export const MDXComponents = {
     return (
       <div
         className={clsx(
-          '[&>*]:mx-auto [&>*]:max-w-3xl [&>:first-child]:!mt-0 [&>:last-child]:!mb-0',
+          '*:mx-auto *:max-w-3xl [&>:first-child]:mt-0! [&>:last-child]:mb-0!',
           className,
         )}
         {...props}

@@ -192,7 +192,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56 bg-url[url(/images/cublogo.png)] bg-neutral-100 bg-blend-multiply inset-shadow inset-shadow-neutral-900">
+      <Container className="mt-24 sm:mt-32 md:mt-56 bg-url[url(/images/cublogo.png)] bg-neutral-100 bg-blend-multiply inset-shadow-sm inset-shadow-neutral-900">
   <FadeIn className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     {/* Left column: Text */}
     <div>

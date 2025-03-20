@@ -1,43 +1,43 @@
 .typography {
-  color: theme('colors.neutral.950');
-  font-size: theme('fontSize.xl');
-  line-height: theme('fontSize.xl.1.lineHeight');
+  color: var(--color-neutral-950);
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
 
-  --shiki-color-text: theme('colors.white');
-  --shiki-color-background: theme('colors.neutral.950');
-  --shiki-token-constant: theme('colors.neutral.300');
-  --shiki-token-string: theme('colors.neutral.400');
-  --shiki-token-comment: theme('colors.neutral.500');
-  --shiki-token-keyword: theme('colors.neutral.400');
-  --shiki-token-parameter: theme('colors.neutral.400');
-  --shiki-token-function: theme('colors.neutral.300');
-  --shiki-token-string-expression: theme('colors.neutral.300');
-  --shiki-token-punctuation: theme('colors.neutral.400');
+  --shiki-color-text: var(--color-white);
+  --shiki-color-background: var(--color-neutral-950);
+  --shiki-token-constant: var(--color-neutral-300);
+  --shiki-token-string: var(--color-neutral-400);
+  --shiki-token-comment: var(--color-neutral-500);
+  --shiki-token-keyword: var(--color-neutral-400);
+  --shiki-token-parameter: var(--color-neutral-400);
+  --shiki-token-function: var(--color-neutral-300);
+  --shiki-token-string-expression: var(--color-neutral-300);
+  --shiki-token-punctuation: var(--color-neutral-400);
 
   :where(.typography > *) {
-    margin-top: theme('spacing.6');
-    margin-bottom: theme('spacing.6');
+    margin-top: --spacing(6);
+    margin-bottom: --spacing(6);
   }
 
   /* Headings */
   :where(h2) {
-    font-weight: theme('fontWeight.semibold');
-    font-family: theme('fontFamily.display');
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-display);
     /* Remove or fix this line if you haven’t defined an object with .fontVariationSettings */
     /* font-variation-settings: theme('fontFamily.display.1.fontVariationSettings'); */
-    font-size: theme('fontSize.2xl');
-    line-height: theme('fontSize.2xl.1.lineHeight');
-    margin-top: theme('spacing.16');
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
+    margin-top: --spacing(16);
   }
 
   :where(h3) {
-    font-weight: theme('fontWeight.semibold');
-    font-family: theme('fontFamily.display');
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-display);
     /* Same note as above — remove or fix if it doesn't exist in your config */
     /* font-variation-settings: theme('fontFamily.display.1.fontVariationSettings'); */
-    font-size: theme('fontSize.xl');
-    line-height: theme('fontSize.xl.1.lineHeight');
-    margin-top: theme('spacing.10');
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+    margin-top: --spacing(10);
   }
 
   :where(h2 + h3) {
@@ -58,22 +58,22 @@
   }
 
   :where(li) {
-    padding-left: theme('spacing.3');
-    margin-top: theme('spacing.6');
+    padding-left: --spacing(3);
+    margin-top: --spacing(6);
   }
 
   :where(li)::marker {
-    color: theme('colors.neutral.500');
+    color: var(--color-neutral-500);
   }
 
   :where(li > *),
   :where(li li) {
-    margin-top: theme('spacing.4');
+    margin-top: --spacing(4);
   }
 
   :where(ol > li)::marker {
     font-size: theme('fontSize.base.0');
-    font-weight: theme('fontWeight.semibold');
+    font-weight: var(--font-weight-semibold);
   }
 
   /* Tables */
@@ -81,41 +81,41 @@
     width: 100%;
     text-align: left;
     font-size: theme('fontSize.base.0');
-    line-height: theme('fontSize.base.1.lineHeight');
+    line-height: var(--text-base--line-height);
   }
 
   :where(th) {
-    font-weight: theme('fontWeight.semibold');
+    font-weight: var(--font-weight-semibold);
   }
 
   :where(thead th) {
-    padding-bottom: theme('spacing.6');
-    border-bottom: 1px solid theme('colors.neutral.950');
+    padding-bottom: --spacing(6);
+    border-bottom: 1px solid var(--color-neutral-950);
   }
 
   :where(td) {
     vertical-align: top;
-    padding-top: theme('spacing.6');
-    padding-bottom: theme('spacing.6');
+    padding-top: --spacing(6);
+    padding-bottom: --spacing(6);
     border-bottom: 1px solid theme('colors.neutral.950 / 0.1');
   }
 
   :where(:is(th, td):not(:last-child)) {
-    padding-right: theme('spacing.6');
+    padding-right: --spacing(6);
   }
 
   /* Code blocks */
   :where(pre) {
     display: flex;
-    background-color: theme('colors.neutral.950');
-    border-radius: theme('borderRadius.4xl');
+    background-color: var(--color-neutral-950);
+    border-radius: var(--radius-4xl);
     overflow-x: auto;
-    margin-top: theme('spacing.10');
-    margin-bottom: theme('spacing.10');
-    margin-left: calc(-1 * theme('spacing.6'));
-    margin-right: calc(-1 * theme('spacing.6'));
+    margin-top: --spacing(10);
+    margin-bottom: --spacing(10);
+    margin-left: calc(-1 * (--spacing(6)));
+    margin-right: calc(-1 * (--spacing(6)));
 
-    @screen sm {
+    @media (width >= theme(--breakpoint-sm)) {
       margin-left: auto;
       margin-right: auto;
     }
@@ -124,21 +124,21 @@
   :where(pre code) {
     flex: none;
     /* Typically you'd reference spacing, e.g. theme('spacing.8') not theme('padding.8') */
-    padding: theme('spacing.8') theme('spacing.6');
+    padding: --spacing(8) --spacing(6);
     font-size: theme('fontSize.base.0');
     line-height: theme('lineHeight.8');
-    color: theme('colors.white');
+    color: var(--color-white);
 
-    @screen sm {
-      padding: theme('spacing.10');
+    @media (width >= theme(--breakpoint-sm)) {
+      padding: --spacing(10);
     }
   }
 
   /* <hr> */
   :where(hr) {
     border-color: theme('colors.neutral.950 / 0.1');
-    margin-top: theme('spacing.24');
-    margin-bottom: theme('spacing.24');
+    margin-top: --spacing(24);
+    margin-bottom: --spacing(24);
   }
 
   /* Inline text */
@@ -147,16 +147,16 @@
     text-decoration-thickness: 1px;
     text-underline-offset: 0.15em;
     text-decoration-skip-ink: none;
-    font-weight: theme('fontWeight.semibold');
+    font-weight: var(--font-weight-semibold);
   }
 
   :where(strong) {
-    font-weight: theme('fontWeight.semibold');
+    font-weight: var(--font-weight-semibold);
   }
 
   :where(code:not(pre code)) {
     font-size: calc(18 / 20 * 1em);
-    font-weight: theme('fontWeight.semibold');
+    font-weight: var(--font-weight-semibold);
 
     &::before,
     &::after {
@@ -165,13 +165,13 @@
   }
 
   :where(h2 code, h3 code) {
-    font-weight: theme('fontWeight.bold');
+    font-weight: var(--font-weight-bold);
   }
 
   /* Figures */
   :where(figure) {
-    margin-top: theme('spacing.32');
-    margin-bottom: theme('spacing.32');
+    margin-top: --spacing(32);
+    margin-bottom: --spacing(32);
   }
 
   /* Spacing overrides */
