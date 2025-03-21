@@ -51,7 +51,7 @@ function InsuranceProviders() {
             className="drop-shadow-2xl w-200px h-200px bg-neutral-200/90 py-12 px-8 mt-10 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4 lg:grid-cols-7 rounded-4xl inset-shadow-2xl inset-shadow-neutral-950/15 ring-1 ring-neutral-950/2"
           >
             {insuranceProviders.map(([client, logo]) => (
-              <li className="flex items-center justify-center  rounded-4xl hover:bg-neutral-100/1 inset-shadow-neutral-900 hover:drop-shadow-2xl p-2" key={client}>
+              <li className="flex items-center justify-center rounded-4xl hover:bg-neutral-100/1 inset-shadow-neutral-950 hover:drop-shadow-2xl p-2" key={client}>
                 <FadeIn >
                   <Image src={logo} alt={client} unoptimized />
                 </FadeIn>
