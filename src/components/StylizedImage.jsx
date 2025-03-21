@@ -46,7 +46,7 @@ export function StylizedImage({ shape = 0, className, ...props }) {
           <use
             href={`#${id}-shape`}
             strokeWidth="2"
-            className="stroke-neutral-900/10"
+            className="stroke-neutral-950/10"
           />
         </g>
         <defs>

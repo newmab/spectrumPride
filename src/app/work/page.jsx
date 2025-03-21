@@ -1,5 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
+// insurance assets
+import aetna from '@/images/insuranceAssets/aetna.png'
+import anthem from '@/images/insuranceAssets/anthem.png'
+import beacon from '@/images/insuranceAssets/beacon.png'
+import blueshieldca from '@/images/insuranceAssets/blueshieldca.png'
+import cigna from '@/images/insuranceAssets/cigna.png'
+import calViva from '@/images/insuranceAssets/calViva.png'
+import ccah from '@/images/insuranceAssets/ccah.png'
+import evernorth from '@/images/insuranceAssets/evernorth.png'
+import healthnet from '@/images/insuranceAssets/healthnet.png'
+import hpsj from '@/images/insuranceAssets/hpsj.png'
+import magellan from '@/images/insuranceAssets/magellan.png'
+import mhn from '@/images/insuranceAssets/mhn.png'
+import optum from '@/images/insuranceAssets/optum.png'
+import unitedHealthcare from '@/images/insuranceAssets/unitedHealthcare.png'
 
 import { Blockquote } from '@/components/Blockquote'
 import { Border } from '@/components/Border'
@@ -16,7 +31,7 @@ function Methodologies({ caseStudies }) {
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-900">
+        <h2 className="font-display text-2xl font-semibold text-neutral-950">
           Methodologies
         </h2>
       </FadeIn>
@@ -33,15 +48,15 @@ function Methodologies({ caseStudies }) {
                       className="h-16 w-16 flex-none"
                       unoptimized
                     />
-                    <h3 className="mt-6 text-sm font-semibold text-neutral-900 sm:mt-0 lg:mt-8">
+                    <h3 className="mt-6 text-sm font-semibold text-neutral-950 sm:mt-0 lg:mt-8">
                       {caseStudy.client}
                     </h3>
                   </div>
                   <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
-                    <p className="text-sm tracking-tight text-neutral-900 after:ml-4 after:font-semibold after:text-neutral-300 after:content-['/'] lg:mt-2 lg:after:hidden">
+                    <p className="text-sm tracking-tight text-neutral-950 after:ml-4 after:font-semibold after:text-neutral-300 after:content-['/'] lg:mt-2 lg:after:hidden">
                       {caseStudy.service}
                     </p>
-                    <p className="text-sm text-neutral-900 lg:mt-2">
+                    <p className="text-sm text-neutral-950 lg:mt-2">
                       <time dateTime={caseStudy.date}>
                         {formatDate(caseStudy.date)}
                       </time>
@@ -49,7 +64,7 @@ function Methodologies({ caseStudies }) {
                   </div>
                 </div>
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
-                  <p className="font-display text-4xl font-medium text-neutral-900">
+                  <p className="font-display text-4xl font-medium text-neutral-950">
                     <Link href={caseStudy.href}>{caseStudy.title}</Link>
                   </p>
                   <div className="mt-6 space-y-6 text-base text-neutral-600">
@@ -104,7 +119,7 @@ function InsuranceProviders() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-900">
+        <h2 className="font-display text-2xl font-semibold text-neutral-950">
           You’re in good company
         </h2>
       </FadeIn>
@@ -140,30 +155,16 @@ export default async function Work() {
 
   return (
     <>
-      <PageIntro
-        eyebrow="Our Services"
-        title="What is ABA?"
-      >
+      <PageIntro eyebrow="Our Services" title="What is ABA?">
         <p>
         ABA is an evidence-based intervention that helps us to understand behavior and impact change such that learning increases as challenging behavior decreases. Focus is centered on the child’s individual needs across behavior support, communication, socialization, and adaptive skills.
         </p>
       </PageIntro>
-      <PageIntro
-       title="Programs"
-      >
+      <PageIntro title="Programs">
         <p>
         Therapy sessions are offered in-home or center-based, depending on location, child needs, and availability. Services are delivered using the principles of Applied Behavior Analysis within the context of natural and structured environments that foster development in social interaction, communication and language, and adaptive functioning. The intensity of our interventions are dependent on the child's needs.
         </p>
       </PageIntro>
-      <Methodologies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
 
       <InsuranceProviders />
 

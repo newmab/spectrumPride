@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import InsuranceProviders from '@/components/InsuranceProviders'
+
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -10,70 +12,12 @@ import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
 // company logo
 import cublogo from '@/images/cublogo.png'
-// insurance assets
-import aetna from '@/images/insuranceAssets/aetna.png'
-import anthem from '@/images/insuranceAssets/anthem.png'
-import beacon from '@/images/insuranceAssets/beacon.png'
-import blueshieldca from '@/images/insuranceAssets/blueshieldca.png'
-import cigna from '@/images/insuranceAssets/cigna.png'
-import calViva from '@/images/insuranceAssets/calViva.png'
-import ccah from '@/images/insuranceAssets/ccah.png'
-import evernorth from '@/images/insuranceAssets/evernorth.png'
-import healthnet from '@/images/insuranceAssets/healthnet.png'
-import hpsj from '@/images/insuranceAssets/hpsj.png'
-import magellan from '@/images/insuranceAssets/magellan.png'
-import mhn from '@/images/insuranceAssets/mhn.png'
-import optum from '@/images/insuranceAssets/optum.png'
-import unitedHealthcare from '@/images/insuranceAssets/unitedHealthcare.png'
+
 
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 
-const insuranceProviders = [
-  ['Aetna', aetna],
-  ['Anthem', anthem],
-  ['Beacon', beacon],
-  ['Blue Shield', blueshieldca],
-  ['Cigna', cigna],
-  ['CalViva', calViva],
-  ['Central California Alliance for Health (CCAH)', ccah],
-  ['Evernorth', evernorth],
-  ['HealthNet', healthnet],
-  ['HPSJ', hpsj],
-  ['Magellan', magellan],
-  ['MHN', mhn],
-  ['Optum', optum],
-  ['United Healthcare', unitedHealthcare],
-]
 
-function InsuranceProviders() {
-  return (
-    <div className="mt-24 rounded-4xl bg-neutral-300 py-20 sm:mt-32 sm:py-32 lg:mt-56 inset-shadow-ring-1 inset-shadow-neutral-900 ">
-      <Container>
-        <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-lg font-semibold tracking-wider text-neutral-800 sm:text-left">
-            We work with a number of Insurance Providers. 
-          </h2>
-          <div className="h-px flex-auto bg-neutral-800" />
-        </FadeIn>
-        <FadeInStagger faster>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-4 lg:grid-cols-7"
-          >
-            {insuranceProviders.map(([client, logo]) => (
-              <li key={client}>
-                <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </FadeInStagger>
-      </Container>
-    </div>
-  )
-}
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -92,7 +36,7 @@ function CaseStudies({ caseStudies }) {
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-900/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                 <h3>
                   <Link href={caseStudy.href}>
                     <span className="absolute inset-0 rounded-3xl" />
@@ -104,7 +48,7 @@ function CaseStudies({ caseStudies }) {
                     />
                   </Link>
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-900">
+                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                   <time
                     dateTime={caseStudy.date.split('-')[0]}
                     className="font-semibold"
@@ -116,7 +60,7 @@ function CaseStudies({ caseStudies }) {
                   </span>
                   <span>Case study</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-900">
+                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
                 </p>
                 <p className="mt-4 text-base text-neutral-600">
@@ -192,17 +136,17 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56 bg-url[url(/images/cublogo.png)] bg-neutral-100 bg-blend-multiply inset-shadow-sm inset-shadow-neutral-900">
-  <FadeIn className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <Container className="mt-24 sm:mt-32 md:mt-56 w-99/100  rounded-4xl drop-shadow-xl">
+  <FadeIn className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center drop-shadow-xl">
     {/* Left column: Text */}
     <div>
-      <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-900 [text-wrap:balance] sm:text-7xl">
+      <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 sm:text-7xl drop-shadow-xl">
         Spectrum Pride
       </h1>
-      <h2 className="font-display mt-5 text-4xl font-light text-neutral-500 [text-wrap:pretty] sm:text-4xl">
+      <h2 className="font-display mt-5 text-4xl font-light tracking-wide text-neutral-600 [text-wrap:balance] sm:text-4xl drop-shadow-xl">
         Serving children from Modesto to Tulare
       </h2>
-      <p className="mt-6 text-xl text-neutral-600">
+      <p className="mt-6 text-xl text-neutral-600 drop-shadow-xl [text-wrap:balance]">
         We’re here to deliver real results for children with autism in the Central Valley.
         Backed by science and a deep sense of compassion, our ABA therapy helps families
         see meaningful progress every step of the way.
@@ -214,7 +158,7 @@ export default async function Home() {
       <Image
         src={cublogo}
         alt="Spectrum Pride Cub Logo"
-        className="mt-10"
+        className="mt-10 "
       />
     </div>
   </FadeIn>

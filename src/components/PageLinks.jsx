@@ -27,7 +27,7 @@ function PageLink({ page }) {
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className="mt-6 text-base font-semibold text-neutral-900">
+        <h3 className="mt-6 text-base font-semibold text-neutral-950">
           {page.title}
         </h3>
         <time
@@ -39,7 +39,7 @@ function PageLink({ page }) {
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
         <Link
           href={page.href}
-          className="mt-6 flex gap-x-3 text-base font-semibold text-neutral-900 transition hover:text-neutral-700"
+          className="mt-6 flex gap-x-3 text-base font-semibold text-neutral-950 transition hover:text-neutral-700"
           aria-label={`Read more: ${page.title}`}
         >
           Read more
@@ -56,7 +56,7 @@ export function PageLinks({ title, pages, intro, className }) {
     <div className={clsx('relative pt-24 sm:pt-32 lg:pt-40', className)}>
       <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-linear-to-b from-neutral-50">
         <GridPattern
-          className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-900/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+          className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
           yOffset={-270}
         />
       </div>
